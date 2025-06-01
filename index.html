@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بدر الحسبان - السيرة الذاتية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== متغيرات CSS ===== */
+        :root {
+            --primary-color: #3a6ea5;
+            --secondary-color: #c0392b;
+            --accent-color: #f39c12;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --text-color: #444;
+            --border-color: #ddd;
+            --section-padding: 80px 0;
+            --transition: all 0.3s ease;
+        }
+
+        /* ===== إعدادات عامة ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== شريط التنقل ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 25px;
+        }
+
+        .nav-links li:last-child {
+            margin-right: 0;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* ===== الصفحة الرئيسية ===== */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(58, 110, 165, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: rgba(243, 156, 18, 0.1);
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgba(58, 110, 165, 0.1);
+            z-index: -1;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            animation: fadeInUp 1s ease 0.3s;
+            animation-fill-mode: both;
+        }
+
+        .hero-btn {
+            animation: fadeInUp 1s ease 0.6s;
+            animation-fill-mode: both;
+        }
+
+        /* ===== نبذة عني ===== */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image-shape {
+            width: 300px;
+            height: 300px;
+            background-color: var(--light-color);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image-shape img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-image-shape::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ===== الخبرات العملية ===== */
+        .experience {
+            background-color: var(--light-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            margin-right: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) {
+            right: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            right: 50%;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* ===== المشاريع ===== */
+        .projects-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-title {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .project-description {
+            margin-bottom: 20px;
+        }
+
+        .project-features {
+            list-style-position: inside;
+            margin-bottom: 20px;
+        }
+
+        .project-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .project-features li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        /* ===== المهارات ===== */
+        .skills {
+            background-color: var(--light-color);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 10px;
+            padding-right: 20px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            right: 0;
+        }
+
+        /* ===== التعليم ===== */
+        .education-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .education-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .education-title {
+            margin-bottom: 15px;
+        }
+
+        .education-details {
+            list-style-position: inside;
+        }
+
+        .education-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .education-details li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        /* ===== العمل التطوعي ===== */
+        .volunteer {
+            background-color: var(--light-color);
+        }
+
+        .volunteer-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .volunteer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .volunteer-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .volunteer-title {
+            margin-bottom: 15px;
+        }
+
+        .volunteer-details {
+            list-style-position: inside;
+        }
+
+        .volunteer-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .volunteer-details li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        /* ===== اللغات ===== */
+        .languages-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .language-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            width: 200px;
+            text-align: center;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .language-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .language-level {
+            font-style: italic;
+            color: var(--text-color);
+        }
+
+        /* ===== اتصل بي ===== */
+        .contact {
+            background-color: var(--light-color);
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px 25px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(58, 110, 165, 0.1);
+            border-radius: 50%;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-value {
+            color: var(--text-color);
+        }
+
+        /* ===== التذييل ===== */
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer p {
+            margin-bottom: 0;
+        }
+
+        /* ===== الرسوم المتحركة ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== قسم الورش التوعوية ===== */
+        .workshops {
+            background-color: var(--light-color);
+        }
+
+          .section-subtitle {
+            text-align: right;
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .workshop-list {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .workshop-list:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .workshop-list ul {
+            list-style-position: inside;
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .workshop-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .workshop-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .workshop-list ul {
+                columns: 1;
+            }
+        }0px;
+            display: flex;
+            align-items: center;
+        }
+
+        .workshop-location::before {
+            content: '📍';
+            margin-left: 8px;
+        }
+
+        .workshop-description {
+            margin-bottom: 15px;
+        }
+
+        /* ===== تصميم متجاوب ===== */
+        @media screen and (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                margin-bottom: 30px;
+            }
+
+            .about-image-shape {
+                margin: 0 auto;
+            }
+
+            .timeline::after {
+                right: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-right: 70px;
+                padding-left: 25px;
+            }
+
+            .timeline-item:nth-child(even) {
+                right: 0;
+            }
+
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                right: 21px;
+                left: auto;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 0 0 20px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .about-image-shape {
+                width: 250px;
+                height: 250px;
+            }
+
+            .timeline-item {
+                padding-right: 60px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">بدر الحسبان</a>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#about">نبذة عني</a></li>
+                <li><a href="#experience">الخبرات</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#workshops">الورش التوعوية</a></li>
+                <li><a href="#skills">المهارات</a></li>
+                <li><a href="#education">التعليم</a></li>
+                <li><a href="#volunteer">العمل التطوعي</a></li>
+                <li><a href="#languages">اللغات</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">بدر الحسبان</h1>
+            <h2 class="hero-subtitle">مدرب مهارات رقمية وأخصائي تواصل مجتمعي ومتخصص في الصحة النفسية</h2>
+            <a href="#" class="btn hero-btn">تحميل السيرة الذاتية</a>
+        </div>
+    </section>
+
+    <!-- نبذة عني -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">نبذة عني</h2>
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <div class="about-image-shape">
+                        <img src="images/profile.jpeg" alt="بدر الحسبان">
+                    </div>
+                </div>
+                <div class="about-text fade-in">
+                    <p>أنا محترف ذو خبرة في مجال التدريب الرقمي والتواصل المجتمعي والصحة النفسية، ومؤسس مبادرة "رقيم" لتعزيز الثقافة الرقمية في الأردن. أسعى دائماً لتمكين الأفراد والمجتمعات من خلال المهارات الرقمية وتكنولوجيا المعلومات، مع التركيز على الفئات المهمشة وتوفير فرص التعلم للجميع.</p>
+                    <p>أقدم ورشات توعوية في مجال الصحة النفسية في مختلف المواقع بما في ذلك المفرق وجامعة آل البيت وجامعة اليرموك والجامعة الأمريكية، مع التركيز على نشر الوعي وتقديم الدعم النفسي للمجتمعات المختلفة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الخبرات العملية -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title fade-in">الخبرات العملية</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 – الآن</div>
+                        <h3 class="timeline-title">مدرب مهارات رقمية وأخصائي إعلام رقمي</h3>
+                        <p>تقديم ورش عمل وتدريبات في مجالات التكنولوجيا الرقمية والإعلام الاجتماعي. تطوير محتوى تدريبي متخصص في الذكاء الاصطناعي والأمن السيبراني. تطوير وإنتاج فيديوهات احترافية للحملات التوعوية والأغراض التعليمية ومنصات التواصل الاجتماعي.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">12/2024 – 2/2025</div>
+                        <h3 class="timeline-title">متدرب ضمان جودة - منظمة "أكشن أغينست هنغر"</h3>
+                        <p>المساهمة في تطوير وتنفيذ إجراءات ضمان الجودة للمشاريع الإنسانية. تحليل البيانات وإعداد التقارير لتحسين كفاءة العمليات. إعداد أوراق حقائق مفصلة وتقارير ولوحات معلومات لدعم قرارات البرامج وإعداد التقارير للمانحين.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">9/2024 – 12/2024</div>
+                        <h3 class="timeline-title">مسؤول تواصل مجتمعي - مؤسسة ولي العهد</h3>
+                        <p>إدارة منصات التواصل الاجتماعي وتطوير استراتيجيات المحتوى الرقمي. تنسيق الفعاليات المجتمعية وبناء العلاقات مع الشركاء المحليين. تنسيق حملات التوعية والأنشطة الميدانية التي تستهدف الفئات المهمشة في المفرق.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">8/2022 – 8/2024</div>
+                        <h3 class="timeline-title">معلم حاسوب - مدرسة التمام الخاصة</h3>
+                        <p>تدريس مناهج الحاسوب والتكنولوجيا للمراحل الإعدادية والثانوية. تطوير أنشطة تعليمية تفاعلية لتعزيز مهارات الطلاب التقنية. تقديم تدريبات في مجال الصحة النفسية والتوعية الرقمية للطلاب وأولياء الأمور.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المشاريع -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">المشاريع</h2>
+            <div class="projects-container">
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <h3 class="project-title">مبادرة رقيم</h3>
+                        <p class="project-description">مبادرة تهدف إلى تقديم ورشات رقمية مجانية للمجتمعات المهمشة، تشمل مجموعة متنوعة من المهارات الرقمية الأساسية والمتقدمة.</p>
+                        <ul class="project-features">
+                            <li>تدريبات على استخدام الذكاء الاصطناعي في الحياة اليومية والعمل</li>
+                            <li>دورات متخصصة في برنامج Excel وإدارة البيانات</li>
+                            <li>ورش عمل في الأمن السيبراني وحماية الخصوصية الرقمية</li>
+                            <li>تدريبات على المونتاج وإنتاج المحتوى الرقمي</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-content">
+                        <h3 class="project-title">مشروع حوسبة باصات جامعة آل البيت</h3>
+                        <p class="project-description">مشروع تخرج يهدف إلى تطوير نظام حوسبة لإدارة وتتبع باصات جامعة آل البيت، مما يساعد في تحسين كفاءة النقل وتجربة الطلاب.</p>
+                        <ul class="project-features">
+                            <li>تطوير نظام لتتبع مواقع الباصات في الوقت الفعلي</li>
+                            <li>إنشاء واجهة مستخدم سهلة الاستخدام للطلاب والإداريين</li>
+                            <li>تحسين جدولة الرحلات وتوزيع الموارد</li>
+                            <li>تقليل أوقات الانتظار وتحسين تجربة التنقل للطلاب</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الورش التدريبية -->
+    <section id="workshops" class="section workshops">
+        <div class="container">
+            <h2 class="section-title fade-in">الورش التدريبية</h2>
+            
+            <!-- الورشات التدريبية عبر الإنترنت -->
+            <h3 class="section-subtitle fade-in">الورشات التدريبية عبر الإنترنت (أونلاين)</h3>
+            <div class="workshop-list fade-in">
+                <ul>
+                    <li>أساسيات تصميم المواقع الإلكترونية</li>
+                    <li>أساسيات بايثون</li>
+                    <li>الميزة غير العادلة</li>
+                    <li>AI Agent</li>
+                    <li>بناء الهوية الرقمية على LinkedIn</li>
+                    <li>أساسيات تصميم الإعلان</li>
+                    <li>خوارزميات مواقع التواصل الاجتماعي</li>
+                    <li>تصميم العروض بلمسة ذكية</li>
+                    <li>كيف يتم اختراقك دون أن تشعر</li>
+                    <li>كيف تبرز في سوق العمل الرقمي</li>
+                    <li>تحقيق الدخل من الإنترنت</li>
+                    <li>استكشاف قوة الكتابة بالذكاء الاصطناعي</li>
+                    <li>فن صناعة الصور بالذكاء الاصطناعي</li>
+                    <li>الهشاشة النفسية في عصر التقنية</li>
+                    <li>صناعة المحتوى بالذكاء الاصطناعي</li>
+                    <li>التعريف بمبادرة رقيم</li>
+                    <li>رحلة في عالم التصميم باستخدام Canva</li>
+                </ul>
+            </div>
+            
+            <!-- الورشات التدريبية الوجاهية -->
+            <h3 class="section-subtitle fade-in">الورشات التدريبية الوجاهية (مكتب مؤسسة ولي العهد المفرق)</h3>
+            <div class="workshop-list fade-in">
+                <ul>
+                    <li>تدريب الطلاب والمعلمين على استخدام التكنولوجيا والموارد الرقمية</li>
+                    <li>ورش عمل لتعزيز المهارات الرقمية واستخدام برامج Microsoft Office</li>
+                    <li>تدريب على مهارات التسويق الرقمي والإعلام الاجتماعي</li>
+                    <li>ورش تدريبية حول الذكاء الاصطناعي وتطبيقاته في مجالات مختلفة</li>
+                    <li>تكامل علم البيانات مع التسويق الرقمي</li>
+                    <li>ماركيتنغ ستورم</li>
+                    <li>الهوية الرقمية</li>
+                    <li>دورة تصميم المواقع الإلكترونية باستخدام الذكاء الاصطناعي</li>
+                    <li>ورشة تطبيقات الذكاء الاصطناعي</li>
+                </ul>
+            </div>
+            
+            <!-- الورشات التدريبية في المدارس -->
+            <h3 class="section-subtitle fade-in">الورشات التدريبية في المدارس (أكثر من 6 مدارس)</h3>
+            <div class="workshop-list fade-in">
+                <ul>
+                    <li>ورشة أساسيات الذكاء الاصطناعي</li>
+                    <li>ورشة الهشاشة النفسية في عصر التقنية</li>
+                    <li>ورشة الهوية الرقمية</li>
+                    <li>ورشة تطبيقات الذكاء الاصطناعي</li>
+                </ul>
+            </div>
+            
+            <!-- الورشات التدريبية في الجامعات -->
+            <h3 class="section-subtitle fade-in">الورشات التدريبية في الجامعات</h3>
+            <div class="workshop-list fade-in">
+                <ul>
+                    <li>ورشة أساسيات المونتاج باستخدام VN - جامعة آل البيت</li>
+                    <li>ورشة الهوية الرقمية - جامعة آل البيت</li>
+                    <li>ورشة اكتشاف عالم الذكاء الاصطناعي - جامعة اليرموك</li>
+                    <li>ورشة الهشاشة النفسية في عصر التقنية - جامعة اليرموك</li>
+                    <li>ورشة الهشاشة النفسية في عصر التقنية - الجامعة الأمريكية في مادبا</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- المهارات -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title fade-in">المهارات</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3>التدريب والتعليم</h3>
+                    <ul class="skill-list">
+                        <li>تصميم المناهج التدريبية</li>
+                        <li>إدارة ورش العمل التفاعلية</li>
+                        <li>التدريس الإلكتروني</li>
+                        <li>تطوير المواد التعليمية المخصصة</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>تكنولوجيا المعلومات</h3>
+                    <ul class="skill-list">
+                        <li>لغات البرمجة (HTML, CSS, JavaScript, Python)</li>
+                        <li>إدارة قواعد البيانات</li>
+                        <li>تطبيقات الذكاء الاصطناعي</li>
+                        <li>حل مشكلات الشبكات والأنظمة</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>الإعلام والتسويق الرقمي</h3>
+                    <ul class="skill-list">
+                        <li>إدارة منصات التواصل الاجتماعي</li>
+                        <li>إنتاج المحتوى الرقمي</li>
+                        <li>تحليلات وسائل التواصل الاجتماعي</li>
+                        <li>إنتاج الفيديو والمونتاج</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>إدارة البيانات</h3>
+                    <ul class="skill-list">
+                        <li>تحليل البيانات باستخدام Excel</li>
+                        <li>إعداد التقارير الإحصائية</li>
+                        <li>تصور البيانات</li>
+                        <li>تصميم الاستبيانات وتحليل النتائج</li>
+                    </ul>
+                </div>
+                <div class="skill-category fade-in">
+                    <h3>الصحة النفسية</h3>
+                    <ul class="skill-list">
+                        <li>تقديم ورش توعوية في الصحة النفسية</li>
+                        <li>تقنيات الدعم النفسي</li>
+                        <li>إدارة الضغط والتوتر</li>
+                        <li>التوعية بالصحة النفسية للمجتمعات المختلفة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التعليم -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">التعليم</h2>
+            <div class="education-card fade-in">
+                <div class="education-date">2017 – 2021</div>
+                <h3 class="education-title">بكالوريوس علوم الحاسوب – جامعة آل البيت</h3>
+                <ul class="education-details">
+                    <li>التخصص في تطوير البرمجيات وقواعد البيانات</li>
+                    <li>مشروع التخرج: تطبيق حوسبة باصات جامعة آل البيت</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- العمل التطوعي -->
+    <section id="volunteer" class="section volunteer">
+        <div class="container">
+            <h2 class="section-title fade-in">العمل التطوعي</h2>
+            <div class="volunteer-card fade-in">
+                <div class="volunteer-date">منذ 12/2022</div>
+                <h3 class="volunteer-title">متطوع – مؤسسة ولي العهد</h3>
+                <ul class="volunteer-details">
+                    <li>المشاركة في مبادرات التمكين الرقمي للشباب</li>
+                    <li>تنظيم فعاليات مجتمعية لنشر الوعي التكنولوجي</li>
+                    <li>تقديم استشارات تقنية للمشاريع الشبابية</li>
+                    <li>المشاركة في حملات التوعية بالصحة النفسية</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- اللغات -->
+    <section id="languages" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">اللغات</h2>
+            <div class="languages-container">
+                <div class="language-card fade-in">
+                    <h3 class="language-name">العربية</h3>
+                    <p class="language-level">اللغة الأم</p>
+                </div>
+                <div class="language-card fade-in">
+                    <h3 class="language-name">الإنجليزية</h3>
+                    <p class="language-level">متقدمة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- اتصل بي -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title fade-in">اتصل بي</h2>
+            <div class="contact-container">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <div class="contact-label">رقم الهاتف</div>
+                        <div class="contact-value">+962791087449</div>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-info">
+                        <div class="contact-label">البريد الإلكتروني</div>
+                        <div class="contact-value">baderahusban@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-info">
+                        <div class="contact-label">LinkedIn</div>
+                        <div class="contact-value">
+                            <a href="https://www.linkedin.com/in/baderhusban/" target="_blank">linkedin.com/in/baderhusban</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 بدر الحسبان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // قائمة الجوال
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // إغلاق القائمة عند النقر على الروابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // تأثير التمرير لشريط التنقل
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // تأثيرات الظهور عند التمرير
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        // تنفيذ التأثير عند التحميل وعند التمرير
+        window.addEventListener('load', fadeInOnScroll);
+        window.addEventListener('scroll', fadeInOnScroll);
+
+        // التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
