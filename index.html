@@ -1,1381 +1,646 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بدر الحسبان - السيرة الذاتية</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <style>
-        /* ===== متغيرات CSS ===== */
-        :root {
-            --primary-color: #3a6ea5;
-            --secondary-color: #c0392b;
-            --accent-color: #f39c12;
-            --light-color: #f5f5f5;
-            --dark-color: #333;
-            --text-color: #444;
-            --border-color: #ddd;
-            --section-padding: 80px 0;
-            --transition: all 0.3s ease;
-        }
-
-        /* ===== إعدادات عامة ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #fff;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--secondary-color);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .section {
-            padding: var(--section-padding);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ===== شريط التنقل ===== */
-        .navbar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            padding: 15px 0;
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled {
-            padding: 10px 0;
-        }
-
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Cairo', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-right: 25px;
-        }
-
-        .nav-links li:last-child {
-            margin-right: 0;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-color);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-
-        /* ===== الصفحة الرئيسية ===== */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(58, 110, 165, 0.1) 0%, rgba(192, 57, 43, 0.1) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-color: rgba(243, 156, 18, 0.1);
-            z-index: -1;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background-color: rgba(58, 110, 165, 0.1);
-            z-index: -1;
-        }
-
-        .hero-content {
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            animation: fadeInUp 1s ease 0.3s;
-            animation-fill-mode: both;
-        }
-
-        .hero-btn {
-            animation: fadeInUp 1s ease 0.6s;
-            animation-fill-mode: both;
-        }
-
-        /* ===== نبذة عني ===== */
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .about-image {
-            flex: 1;
-            position: relative;
-        }
-
-        .about-image-shape {
-            width: 300px;
-            height: 300px;
-            background-color: var(--light-color);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-image-shape img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .about-image-shape::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            opacity: 0.1;
-            z-index: 1;
-        }
-
-        .about-text {
-            flex: 2;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* ===== الخبرات العملية ===== */
-        .experience {
-            background-color: var(--light-color);
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            right: 50%;
-            margin-right: -1.5px;
-        }
-
-        .timeline-item {
-            padding: 10px 50px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 30px;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: white;
-            border: 3px solid var(--primary-color);
-            border-radius: 50%;
-            top: 15px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd) {
-            right: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            right: 50%;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline-date {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .timeline-title {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        /* ===== المشاريع ===== */
-        .projects-container {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-title {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .project-description {
-            margin-bottom: 20px;
-        }
-
-        .project-features {
-            list-style-position: inside;
-            margin-bottom: 20px;
-        }
-
-        .project-features li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .project-features li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            right: 0;
-        }
-
-        /* ===== المهارات ===== */
-        .skills {
-            background-color: var(--light-color);
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-category {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .skill-category h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        .skill-list {
-            list-style-type: none;
-        }
-
-        .skill-list li {
-            margin-bottom: 10px;
-            padding-right: 20px;
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: '✓';
-            color: var(--accent-color);
-            position: absolute;
-            right: 0;
-        }
-
-        /* ===== التعليم ===== */
-        .education-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .education-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .education-date {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .education-title {
-            margin-bottom: 15px;
-        }
-
-        .education-details {
-            list-style-position: inside;
-        }
-
-        .education-details li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .education-details li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            right: 0;
-        }
-
-        /* ===== العمل التطوعي ===== */
-        .volunteer {
-            background-color: var(--light-color);
-        }
-
-        .volunteer-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .volunteer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .volunteer-date {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .volunteer-title {
-            margin-bottom: 15px;
-        }
-
-        .volunteer-details {
-            list-style-position: inside;
-        }
-
-        .volunteer-details li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .volunteer-details li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            right: 0;
-        }
-
-        /* ===== اللغات ===== */
-        .languages-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .language-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-            width: 200px;
-            text-align: center;
-        }
-
-        .language-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .language-name {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .language-level {
-            font-style: italic;
-            color: var(--text-color);
-        }
-
-        /* ===== اتصل بي ===== */
-        .contact {
-            background-color: var(--light-color);
-        }
-
-        .contact-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px 25px;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: var(--transition);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(58, 110, 165, 0.1);
-            border-radius: 50%;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-label {
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .contact-value {
-            color: var(--text-color);
-        }
-
-        /* ===== التذييل ===== */
-        .footer {
-            background-color: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        .footer p {
-            margin-bottom: 0;
-        }
-
-        /* ===== الرسوم المتحركة ===== */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ===== قسم الورش التوعوية ===== */
-        .workshops {
-            background-color: var(--light-color);
-        }
-
-          .section-subtitle {
-            text-align: right;
-            margin: 30px 0 15px;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        .workshop-list {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            transition: var(--transition);
-        }
-
-        .workshop-list:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .workshop-list ul {
-            list-style-position: inside;
-            columns: 2;
-            column-gap: 40px;
-        }
-
-        .workshop-list li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-right: 20px;
-        }
-
-        .workshop-list li::before {
-            content: '•';
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            right: 0;
-        }
-
-        @media (max-width: 768px) {
-            .workshop-list ul {
-                columns: 1;
-            }
-        }0px;
-            display: flex;
-            align-items: center;
-        }
-
-        .workshop-location::before {
-            content: '📍';
-            margin-left: 8px;
-        }
-
-        .workshop-description {
-            margin-bottom: 15px;
-        }
-
-        /* ===== تصميم متجاوب ===== */
-        @media screen and (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .about-image {
-                margin-bottom: 30px;
-            }
-
-            .about-image-shape {
-                margin: 0 auto;
-            }
-
-            .timeline::after {
-                right: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-right: 70px;
-                padding-left: 25px;
-            }
-
-            .timeline-item:nth-child(even) {
-                right: 0;
-            }
-
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                right: 21px;
-                left: auto;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding-top: 50px;
-                transition: var(--transition);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                margin: 0 0 20px 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-
-        @media screen and (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .about-image-shape {
-                width: 250px;
-                height: 250px;
-            }
-
-            .timeline-item {
-                padding-right: 60px;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>بدر الحسبان — مدرب مهارات رقمية</title>
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { slate: { 950: '#020617' } },
+          boxShadow: {
+            glow: '0 0 50px -12px rgba(34,211,238,0.45)',
+          },
+          keyframes: {
+            floaty: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)'} },
+            pulsegrad: { '0%, 100%': { opacity: .25 }, '50%': { opacity: .45 } },
+            pop: { '0%': { opacity:0, transform:'scale(.96)' }, '100%': { opacity:1, transform:'scale(1)' } },
+          },
+          animation: {
+            floaty: 'floaty 6s ease-in-out infinite',
+            pulsegrad: 'pulsegrad 6s ease-in-out infinite',
+            pop: 'pop .45s ease forwards',
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html { scroll-behavior:smooth; }
+    body { background: radial-gradient(1200px 600px at 50% -10%, rgba(34,211,238,.08), transparent 60%), linear-gradient(to bottom, #020617, #0f172a 40%, #020617 100%); color:#e2e8f0;}
+    .container { max-width: 1200px; }
+    .backdrop { backdrop-filter: blur(6px); }
+    .section { scroll-margin-top: 110px; }
+    /* In-view animation helper */
+    [data-anim] { opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    [data-anim].is-visible { opacity:1; transform:none; }
+    /* mobile drawer */
+    .drawer { transform: translateX(100%); transition: transform .35s ease; }
+    .drawer.open { transform: translateX(0); }
+    /* pills & buttons */
+    .pill{border-radius:9999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);padding:.45rem .8rem}
+    .pill:hover{background:rgba(255,255,255,.1)}
+    .btn{background:rgba(34,211,238,.92);color:#0f172a;border-radius:14px;padding:.6rem 1rem;font-weight:800}
+    .btn:hover{background:rgba(34,211,238,.8)}
+    .btn-outline{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.6rem 1rem}
+    .btn-outline:hover{background:rgba(255,255,255,.12)}
+    /* cards */
+    .card{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);border-radius:22px;padding:18px}
+    .card-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .title{font-weight:800}
+    .meta{font-size:.85rem;color:#94a3b8;white-space:nowrap}
+    .bullets{margin-top:.5rem;list-style:disc;padding-right:1.1rem;color:#cbd5e1}
+    /* trainings */
+    .tab{border:1px solid rgba(255,255,255,.12);padding:.5rem .85rem;border-radius:9999px;background:rgba(255,255,255,.05);font-weight:700}
+    .tab.active{background:rgba(34,211,238,.15);border-color:rgba(34,211,238,.35)}
+    .tpanel{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);border-radius:22px;padding:18px}
+    .heading{font-weight:800;color:#67e8f9}
+    .list{margin-top:.5rem;list-style:disc;padding-right:1.1rem;color:#cbd5e1}
+    /* services */
+    .svc{border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.05);border-radius:22px;padding:18px;display:flex;flex-direction:column}
+    .svc:hover{transform:translateY(-4px);transition:.25s ease; box-shadow:0 10px 30px -10px rgba(0,0,0,.45)}
+    .svc-head{display:flex;align-items:center;justify-content:space-between}
+    .svc-head h3{font-weight:800;color:#67e8f9}
+    .svc-desc{margin-top:.4rem;color:#cbd5e1;font-size:.95rem}
+    .svc-list{margin-top:.6rem;list-style:disc;padding-right:1.1rem;color:#cbd5e1;font-size:.9rem}
+    .svc-actions{margin-top:auto;display:flex;gap:.5rem}
+  </style>
 </head>
-<body>
-    <!-- شريط التنقل -->
-    <nav class="navbar">
-        <div class="container navbar-container">
-            <a href="#" class="logo">بدر الحسبان</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-links">
-                <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#about">نبذة عني</a></li>
-                <li><a href="#experience">الخبرات</a></li>
-                <li><a href="#media-experience">الخبرات الإعلامية</a></li>
-                <li><a href="#works">الأعمال</a></li>
-                <li><a href="#initiatives">المبادرات</a></li>
-                <li><a href="#projects">المشاريع</a></li>
-                <li><a href="#workshops">الورش التوعوية</a></li>
-                <li><a href="#skills">المهارات</a></li>
-                <li><a href="#education">التعليم</a></li>
-                <li><a href="#volunteer">العمل التطوعي</a></li>
-                <li><a href="#languages">اللغات</a></li>
-                <li><a href="#contact">اتصل بي</a></li>
-            </ul>
+<body class="selection:bg-cyan-500/30">
+  <!-- زر واتساب عائم -->
+  <a href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%20%D8%AE%D8%AF%D9%85%D8%A9" target="_blank"
+     class="fixed bottom-5 left-5 z-50 rounded-full bg-green-500 p-3 shadow-xl hover:bg-green-400 focus:outline-none focus:ring-4 focus:ring-green-500/30 animate-pop" aria-label="تواصل واتساب">
+    <i data-lucide="message-circle" class="text-white" style="width:24px;height:24px;"></i>
+  </a>
+
+  <!-- الشريط العلوي -->
+  <header class="sticky top-0 z-40 border-b border-white/10 bg-slate-950/60 backdrop">
+    <div class="container mx-auto px-3 sm:px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="font-extrabold tracking-tight text-lg">بدر الحسبان</a>
+        <!-- سطح مكتب -->
+        <nav class="hidden md:flex items-center gap-4 xl:gap-6 text-sm">
+          <a href="#home" class="text-slate-300 hover:text-white">الرئيسية</a>
+          <a href="#about" class="text-slate-300 hover:text-white">نبذة</a>
+          <a href="#experience" class="text-slate-300 hover:text-white">الخبرات</a>
+          <a href="#trainings" class="text-slate-300 hover:text-white">التدريبات</a>
+          <a href="#projects" class="text-slate-300 hover:text-white">المشاريع</a>
+          <a href="#skills" class="text-slate-300 hover:text-white">المهارات</a>
+          <a href="#works" class="text-slate-300 hover:text-white">أعمال</a>
+          <a href="#gallery" class="text-slate-300 hover:text-white">معرض</a>
+          <a href="#contact" class="text-slate-300 hover:text-white">تواصل</a>
+          <a href="#services" class="text-slate-300 hover:text-white">الخدمات</a>
+          <div class="hidden lg:flex items-center gap-3">
+            <a href="https://www.linkedin.com/in/baderhusban/" target="_blank" class="text-cyan-300 hover:text-white" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+            <a href="https://www.instagram.com/baderhusban?igsh=emt5M2F4N296cmdp&utm_source=qr" target="_blank" class="text-cyan-300 hover:text-white" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="https://www.facebook.com/share/19bZLRYrw5/?mibextid=LQQJ4d" target="_blank" class="text-cyan-300 hover:text-white" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+          </div>
+        </nav>
+        <!-- جوال -->
+        <button id="openMenu" class="md:hidden p-2 rounded-xl border border-white/10" aria-label="فتح القائمة">
+          <i data-lucide="menu" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- قائمة الجوال -->
+    <aside id="mobileMenu" class="fixed inset-0 z-50 hidden">
+      <div class="absolute inset-0 bg-black/60" onclick="toggleMenu(false)"></div>
+      <div class="drawer absolute inset-y-0 right-0 w-80 max-w-[85%] bg-slate-950 border-l border-white/10 p-4">
+        <div class="flex items-center justify-between">
+          <span class="font-bold">القائمة</span>
+          <button class="p-2 rounded-xl border border-white/10" onclick="toggleMenu(false)">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
         </div>
-    </nav>
+        <nav class="mt-6 grid gap-2 text-slate-200">
+          <a href="#home" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">الرئيسية</a>
+          <a href="#about" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">نبذة</a>
+          <a href="#experience" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">الخبرات</a>
+          <a href="#trainings" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">التدريبات</a>
+          <a href="#projects" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">المشاريع</a>
+          <a href="#skills" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">المهارات</a>
+          <a href="#works" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">أعمال</a>
+          <a href="#gallery" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">معرض</a>
+          <a href="#contact" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">تواصل</a>
+          <a href="#services" class="rounded-xl px-3 py-2 hover:bg-white/5" onclick="toggleMenu(false)">الخدمات</a>
+          <div class="flex items-center gap-3 mt-2">
+            <a href="https://www.linkedin.com/in/baderhusban/" target="_blank" class="rounded-xl px-3 py-2 hover:bg-white/5 inline-flex items-center gap-2"><i data-lucide="linkedin" class="w-4 h-4"></i> لينكدإن</a>
+            <a href="https://www.instagram.com/baderhusban?igsh=emt5M2F4N296cmdp&utm_source=qr" target="_blank" class="rounded-xl px-3 py-2 hover:bg-white/5 inline-flex items-center gap-2"><i data-lucide="instagram" class="w-4 h-4"></i> انستغرام</a>
+            <a href="https://www.facebook.com/share/19bZLRYrw5/?mibextid=LQQJ4d" target="_blank" class="rounded-xl px-3 py-2 hover:bg-white/5 inline-flex items-center gap-2"><i data-lucide="facebook" class="w-4 h-4"></i> فيسبوك</a>
+          </div>
+        </nav>
+      </div>
+    </aside>
+  </header>
 
-    <!-- الصفحة الرئيسية -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1 class="hero-title">بدر الحسبان</h1>
-            <h2 class="hero-subtitle">مدرب مهارات رقمية و صحة نفسية وأخصائي تواصل مجتمعية</h2>
-            <a href="https://drive.google.com/uc?export=download&id=1pishrwZIko56TyKSqisEvEcuLjZoNPkI" class="btn hero-btn">تحميل السيرة الذاتية</a>
+  <!-- البطل -->
+  <section id="home" class="section relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0 animate-pulsegrad" style="background: radial-gradient(ellipse at top, rgba(34,211,238,0.18), transparent 55%);"></div>
+    <div class="container mx-auto px-3 sm:px-4 py-12 md:py-20 grid md:grid-cols-2 gap-6 md:gap-8 items-center">
+      <div data-anim style="transition-delay:.05s">
+        <span class="inline-flex items-center gap-2 text-xs text-cyan-300/90">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> المفرق، الأردن
+        </span>
+        <h1 class="mt-3 text-3xl md:text-5xl font-extrabold leading-tight">مدرب مهارات رقمية</h1>
+        <p class="mt-3 text-slate-300 leading-relaxed max-w-prose">
+          أدرب الأفراد والفرق على المهارات الرقمية الأساسية والمتقدمة، وأبني حلولًا عملية تدعم التعلم والعمل والمشاريع.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%20%D8%AE%D8%AF%D9%85%D8%A9" target="_blank" class="btn inline-flex items-center gap-1">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i> اطلب خدمة الآن
+          </a>
+          <a href="#services" class="btn-outline inline-flex items-center gap-1">
+            <i data-lucide="calendar" class="w-4 h-4"></i> تصفّح الخدمات
+          </a>
         </div>
-    </section>
 
-    <!-- نبذة عني -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">نبذة عني</h2>
-            <div class="about-content">
-                <div class="about-image fade-in">
-                    <div class="about-image-shape">
-                        <img src="profile.jpeg" alt="بدر الحسبان">
-                    </div>
-                </div>
-                <div class="about-text fade-in">
-                    <p>أنا محترف ذو خبرة في مجال التدريب الرقمي والتواصل المجتمعي والصحة النفسية، ومؤسس مبادرة "رقيم" لتعزيز الثقافة الرقمية في الأردن. أسعى دائماً لتمكين الأفراد والمجتمعات من خلال المهارات الرقمية وتكنولوجيا المعلومات، مع التركيز على الفئات المهمشة وتوفير فرص التعلم للجميع.</p>
-                    <p>أقدم ورشات توعوية في مجال الصحة النفسية في مختلف المواقع بما في ذلك المفرق وجامعة آل البيت وجامعة اليرموك والجامعة الأمريكية، مع التركيز على نشر الوعي وتقديم الدعم النفسي للمجتمعات المختلفة.</p>
-                </div>
-            </div>
+        <!-- شرائح حجز سريعة -->
+        <div class="mt-5 flex flex-wrap gap-2 text-xs">
+          <a class="pill" target="_blank" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%A8%D9%86%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A">احجز: بناء موقع</a>
+          <a class="pill" target="_blank" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AF%D9%88%D8%B1%D8%A7%D8%AA%20%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9">احجز: دورات تدريبية</a>
+          <a class="pill" target="_blank" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA">احجز: تصميم إعلانات</a>
+          <a class="pill" target="_blank" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A">احجز: استشارات ذكاء</a>
+          <a class="pill" target="_blank" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D9%88%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC">احجز: تصوير/مونتاج</a>
         </div>
-    </section>
 
-    <!-- الخبرات العملية -->
-    <section id="experience" class="section experience">
-        <div class="container">
-            <h2 class="section-title fade-in">الخبرات العملية</h2>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2021 – الآن</div>
-                        <h3 class="timeline-title">مدرب مهارات رقمية وأخصائي إعلام رقمي</h3>
-                        <p>تقديم ورش عمل وتدريبات في مجالات التكنولوجيا الرقمية والإعلام الاجتماعي. تطوير محتوى تدريبي متخصص في الذكاء الاصطناعي والأمن السيبراني. تطوير وإنتاج فيديوهات احترافية للحملات التوعوية والأغراض التعليمية ومنصات التواصل الاجتماعي.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">12/2024 – 2/2025</div>
-                        <h3 class="timeline-title">متدرب ضمان جودة - العمل لمكافحة الجوع "</h3>
-                        <p>المساهمة في تطوير وتنفيذ إجراءات ضمان الجودة للمشاريع الإنسانية. تحليل البيانات وإعداد التقارير لتحسين كفاءة العمليات. إعداد أوراق حقائق مفصلة وتقارير ولوحات معلومات لدعم قرارات البرامج وإعداد التقارير للمانحين.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">9/2024 – 12/2024</div>
-                        <h3 class="timeline-title">مسؤول تواصل مجتمعي - مؤسسة ولي العهد</h3>
-                        <p>كنت أعمل على إعداد التقارير وتحليل البيانات بهدف تقديم توصيات عملية تسهم في تحسين سير العمل. كما كنت أحضر الاجتماعات وألخص أبرز النقاط لمشاركتها مع الفريق لضمان وضوح الصورة لدى الجميع. وكنت أجري أبحاثًا في مواضيع متنوعة، وأقدّم ملخصات تحليلية تُسهم في دعم عملية اتخاذ القرار. إضافةً إلى ذلك، كنت أشارك في تنسيق الأنشطة اليومية وتنظيم الفعاليات بالتعاون مع الفرق المختلفة. وحرصت على تنظيم الملفات والوثائق بطريقة تضمن سهولة الوصول إليها وسلامتها.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-content">
-                        <div class="timeline-date">8/2022 – 8/2024</div>
-                        <h3 class="timeline-title">معلم حاسوب - مدرسة التمام الخاصة</h3>
-                        <p>تدريس مناهج الحاسوب والتكنولوجيا للمراحل الإعدادية والثانوية. تطوير أنشطة تعليمية تفاعلية لتعزيز مهارات الطلاب التقنية. تقديم تدريبات في مجال الصحة النفسية والتوعية الرقمية للطلاب وأولياء الأمور.</p>
-                    </div>
-                </div>
-            </div>
+        <!-- أيقونات تواصل سريعة -->
+        <div class="mt-6 flex items-center gap-4">
+          <a href="https://www.linkedin.com/in/baderhusban/" target="_blank" class="inline-flex items-center gap-2 text-slate-300 hover:text-white"><i data-lucide="linkedin" class="w-4 h-4"></i>LinkedIn</a>
+          <a href="https://www.instagram.com/baderhusban?igsh=emt5M2F4N296cmdp&utm_source=qr" target="_blank" class="inline-flex items-center gap-2 text-slate-300 hover:text-white"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
+          <a href="https://www.facebook.com/share/19bZLRYrw5/?mibextid=LQQJ4d" target="_blank" class="inline-flex items-center gap-2 text-slate-300 hover:text-white"><i data-lucide="facebook" class="w-4 h-4"></i>Facebook</a>
         </div>
-    </section>
+      </div>
 
-    <!-- الخبرات الإعلامية -->
-    <section id="media-experience" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">الخبرات الإعلامية</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">خبرة في التصوير والمونتاج</h3>
-                        <p class="project-description">أمتلك خبرة واسعة في مجال التصوير والمونتاج، حيث عملت على العديد من المشاريع الإعلامية والتوثيقية على مدار السنوات الماضية. تطورت مهاراتي في هذا المجال من خلال العمل على مشاريع متنوعة بدءاً من الفيديوهات التعليمية وصولاً إلى الحملات التوعوية والتسويقية.</p>
-                        <p class="project-description">أتقن استخدام مجموعة متنوعة من برامج المونتاج المتخصصة مثل Adobe Premiere Pro وAfter Effects، بالإضافة إلى تقنيات التصوير الاحترافية باستخدام معدات متطورة. كما أمتلك القدرة على تطويع هذه المهارات لخدمة أهداف مختلفة، سواء كانت تعليمية أو توعوية أو تسويقية.</p>
-                        <ul class="project-features">
-                            <li>تصوير وإنتاج فيديوهات تعليمية وتوعوية بجودة عالية</li>
-                            <li>مونتاج محتوى احترافي للمنصات الرقمية ووسائل التواصل الاجتماعي</li>
-                            <li>إنتاج محتوى بصري مبتكر للحملات التوعوية والتسويقية</li>
-                            <li>تصميم وإنتاج المواد البصرية التفاعلية للورش التدريبية</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">إعداد قصص نجاح - منظمة العمل لمكافحة</h3>
-                        <p class="project-description">خلال فترة تدريبي في منظمة العمل لمكافحة، تخصصت في إعداد وتوثيق قصص النجاح المتنوعة التي تعكس أثر المشاريع والمبادرات على المجتمعات المستهدفة. كانت هذه التجربة فرصة قيّمة لتطوير مهاراتي في التوثيق والسرد القصصي، حيث تمكنت من نقل تجارب المستفيدين بطريقة تحافظ على أصالة قصصهم وتبرز التغيير الإيجابي في حياتهم.</p>
-                        <p class="project-description">عملت على تطوير منهجية متكاملة لتوثيق قصص النجاح، بدءاً من إجراء المقابلات الشخصية وجمع البيانات، مروراً بكتابة المحتوى وتحريره، وصولاً إلى إنتاج مواد مرئية داعمة ونشرها عبر منصات المنظمة. ساهمت هذه القصص في تعزيز الوعي بأهمية المشاريع التنموية وتأثيرها المباشر على حياة الأفراد والمجتمعات.</p>
-                        <ul class="project-features">
-                            <li>إجراء مقابلات معمقة مع المستفيدين وتوثيق تجاربهم بدقة وحساسية</li>
-                            <li>كتابة وتحرير قصص النجاح بأسلوب سردي جذاب ومؤثر يحافظ على الأصالة</li>
-                            <li>تصوير وإنتاج مقاطع فيديو توثيقية عالية الجودة تعزز تأثير القصص</li>
-                            <li>تطوير استراتيجية نشر متكاملة للقصص عبر منصات المنظمة الرقمية المختلفة</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">استديو نشمية الإعلامي</h3>
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="nashimya.bmp" alt="شعار استديو نشمية" style="max-width: 200px; height: auto;">
-                        </div>
-                        <p class="project-description">قمت بإعداد وتأسيس استديو إعلامي متكامل في مدرسة عالية في محافظة المفرق تحت اسم "استديو نشمية". يمثل هذا المشروع نقلة نوعية في مجال التعليم الإعلامي للطالبات، حيث يوفر بيئة تعليمية عملية تمكنهن من اكتساب مهارات الإعلام الرقمي والإنتاج المرئي في سن مبكرة.</p>
-                        <p class="project-description">كان الهدف الرئيسي من هذا المشروع تدريب الطالبات وإعداد محتوى للبث المباشر على منصات المدرسة على الإنترنت، مما يساهم في تعزيز مهاراتهن التقنية والإبداعية وإعدادهن لسوق العمل المستقبلي. نجح الاستديو في استقطاب اهتمام الطالبات وتحفيزهن على المشاركة الفعالة في إنتاج محتوى إعلامي متميز يعكس قضايا مجتمعهن المحلي ويسلط الضوء على إنجازات المدرسة.</p>
-                        <ul class="project-features">
-                            <li>تصميم وتجهيز الاستديو بأحدث المعدات اللازمة للتصوير والبث المباشر</li>
-                            <li>تطوير برنامج تدريبي متكامل للطالبات في مجالات التصوير والمونتاج والإخراج</li>
-                            <li>إنتاج محتوى تعليمي وثقافي متنوع للبث على منصات المدرسة الرقمية</li>
-                            <li>تنظيم ورش عمل متخصصة في مجال الإعلام الرقمي وصناعة المحتوى للطالبات</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="relative" data-anim style="transition-delay:.15s">
+        <div class="aspect-square max-w-sm mx-auto rounded-3xl overflow-hidden border border-cyan-500/20 shadow-glow animate-floaty">
+          <img src="https://i.ibb.co/fdyVCX0s/3.png" alt="بدر الحسبان" class="w-full h-full object-cover" />
         </div>
-    </section>
+        <div class="absolute -bottom-4 -left-4 w-32 h-32 rounded-full blur-3xl bg-cyan-500/30"></div>
+      </div>
+    </div>
+  </section>
 
-    <!-- الأعمال -->
-    <section id="works" class="section works" style="background-color: var(--light-color);">
-        <div class="container">
-            <h2 class="section-title fade-in">الأعمال</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">أعمال فيديو وتصوير</h3>
-                        <p class="project-description">مجموعة من الأعمال المرئية التي قمت بإنتاجها وتصويرها ومونتاجها:</p>
-                        <ul class="project-features">
-                            <li><a href="https://www.youtube.com/watch?v=example1" target="_blank">فيديو توعوي عن الصحة النفسية في عصر التكنولوجيا</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=example2" target="_blank">تغطية ورشة عمل عن الذكاء الاصطناعي في جامعة آل البيت</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=example3" target="_blank">سلسلة تعليمية عن المهارات الرقمية الأساسية</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=example4" target="_blank">فيديو تعريفي بمبادرة رقيم وأهدافها</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <!-- نبذة قصيرة -->
+  <section id="about" class="section container mx-auto px-3 sm:px-4 py-14">
+    <div class="card" data-anim>
+      <h2 class="text-2xl md:text-3xl font-extrabold">نبذة</h2>
+      <p class="mt-3 leading-relaxed text-slate-300">
+        مدرب مهارات رقمية أساعد المتعلمين على بناء أساس قوي في أدوات الويب، الإنتاج الرقمي، والذكاء الاصطناعي عبر تدريب تطبيقي وخطط تعلم واضحة.
+      </p>
+      <ul class="mt-4 flex flex-wrap gap-2 text-xs">
+        <li class="pill">تدريب تطبيقي</li>
+        <li class="pill">خطط تعلم موجهة</li>
+        <li class="pill">أثر قابل للقياس</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- الخبرات العملية -->
+  <section id="experience" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>الخبرات العملية</h2>
+    <div class="mt-6 grid gap-4">
+      <article class="card" data-anim style="transition-delay:.05s">
+        <div class="card-head">
+          <h3 class="title">Digital Skills Trainer — <span class="text-cyan-300">DOT Jordan · Freelance</span></h3>
+          <span class="meta">08/2025 — الآن · المفرق</span>
         </div>
-    </section>
+        <ul class="bullets">
+          <li>تصميم وتنفيذ برامج مهارات رقمية للمجتمعات</li>
+          <li>تيسير تعلم تطبيقي للأدوات والمنصات</li>
+          <li>قياس أثر التدريب ورفع التقارير</li>
+        </ul>
+      </article>
 
-    <!-- المبادرات -->
-    <section id="initiatives" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">المبادرات</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">مبادرة رقيم</h3>
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="0a58c451-dc95-4aff-97f0-91f620eca24c (1).jpg" alt="شعار مبادرة رقيم" style="max-width: 200px; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                        </div>
-                        <p class="project-description">مبادرة رقيم هي مشروع طموح أسسته بهدف تعزيز الثقافة الرقمية في الأردن، خاصة في المناطق النائية والمجتمعات المهمشة. تعمل المبادرة على سد الفجوة الرقمية من خلال تقديم ورشات تدريبية وبرامج متنوعة في مجال التكنولوجيا والمهارات الرقمية، مما يساهم في تمكين الأفراد وتعزيز فرصهم في سوق العمل.</p>
-                        <p class="project-description">منذ تأسيسها، نجحت المبادرة في الوصول إلى مئات المستفيدين وتقديم تدريبات نوعية تتناسب مع احتياجات السوق المحلي والعالمي. كما عملت على بناء شراكات استراتيجية مع مؤسسات تعليمية ومنظمات مجتمع مدني لتوسيع نطاق تأثيرها وضمان استدامة برامجها.</p>
-                        <ul class="project-features">
-                            <li>تصميم وتقديم ورشات تدريبية متخصصة في المهارات الرقمية للمجتمعات المهمشة</li>
-                            <li>تطوير محتوى تعليمي رقمي عالي الجودة باللغة العربية يناسب احتياجات السوق المحلي</li>
-                            <li>تنظيم فعاليات توعوية تفاعلية حول الأمن السيبراني والخصوصية الرقمية</li>
-                            <li>بناء وإدارة شبكة متنامية من المتطوعين والمدربين المتخصصين في مجال التكنولوجيا</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">مبادرة زاوية</h3>
-                        <div style="text-align: center; margin-bottom: 20px;">
-                            <img src="IMG_0169.png" alt="شعار مبادرة زاوية" style="max-width: 200px; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
-                        </div>
-                        <p class="project-description">مبادرة زاوية هي إحدى البرامج الرئيسية المنبثقة عن مبادرة رقيم، وتتخصص في إنتاج محتوى بودكاست على الإنترنت ضمن أطر مختلفة تعالج قضايا مجتمعية متنوعة. تأسست المبادرة بهدف إيجاد منصة إعلامية بديلة تتيح للشباب التعبير عن آرائهم ومناقشة القضايا التي تهمهم بحرية وإبداع.</p>
-                        <p class="project-description">قمت بإدارة فريق عمل متكامل لتصوير وإنتاج حلقات البودكاست، حيث نجحنا في تقديم محتوى إعلامي متميز يجمع بين العمق المعرفي والأسلوب الإبداعي في العرض. تميزت المبادرة بقدرتها على استقطاب جمهور واسع من الشباب وتحفيزهم على المشاركة الفاعلة في النقاشات المجتمعية المختلفة.</p>
-                        <ul class="project-features">
-                            <li>إنتاج حلقات بودكاست احترافية متنوعة تناقش قضايا مجتمعية ملحة بأسلوب عصري</li>
-                            <li>تصميم وتنفيذ برامج تدريبية متخصصة للشباب في مجال تقنيات إنتاج البودكاست</li>
-                            <li>تطوير استراتيجية محتوى متكاملة تغطي مواضيع متنوعة تهم الشباب والمجتمع المحلي</li>
-                            <li>بناء شبكة تعاون مع خبراء ومختصين من مختلف المجالات لإثراء المحتوى وتعزيز مصداقيته</li>
-                        </ul>
-                        <p style="margin-top: 15px;">
-                            <a href="https://www.instagram.com/zawya_podcast" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; background-color: #f5f5f5; padding: 10px; border-radius: 8px; transition: all 0.3s ease;">
-                                <span style="font-size: 1.2rem;">📱</span> تابعونا على الانستغرام
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <article class="card" data-anim style="transition-delay:.1s">
+        <div class="card-head">
+          <h3 class="title">مدرب مهارات رقمية وإعلام رقمي — <span class="text-cyan-300">مستقل</span></h3>
+          <span class="meta">2021 — الآن</span>
         </div>
-    </section>
+        <ul class="bullets">
+          <li>برامج تدريب عملية في الويب والذكاء الاصطناعي</li>
+          <li>ورش تفاعلية وإنتاج محتوى مرئي</li>
+          <li>إدارة الحضور الرقمي وتحليل الأداء</li>
+        </ul>
+      </article>
 
-    <!-- المشاريع -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">المشاريع</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">مبادرة رقيم</h3>
-                        <p class="project-description">مبادرة تهدف إلى تقديم ورشات رقمية مجانية للمجتمعات المهمشة، تشمل مجموعة متنوعة من المهارات الرقمية الأساسية والمتقدمة.</p>
-                        <ul class="project-features">
-                            <li>تدريبات على استخدام الذكاء الاصطناعي في الحياة اليومية والعمل</li>
-                            <li>دورات متخصصة في برنامج Excel وإدارة البيانات</li>
-                            <li>ورش عمل في الأمن السيبراني وحماية الخصوصية الرقمية</li>
-                            <li>تدريبات على المونتاج وإنتاج المحتوى الرقمي</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-content">
-                        <h3 class="project-title">مشروع حوسبة باصات جامعة آل البيت</h3>
-                        <p class="project-description">مشروع تخرج يهدف إلى تطوير نظام حوسبة لإدارة وتتبع باصات جامعة آل البيت، مما يساعد في تحسين كفاءة النقل وتجربة الطلاب.</p>
-                        <ul class="project-features">
-                            <li>تطوير نظام لتتبع مواقع الباصات في الوقت الفعلي</li>
-                            <li>إنشاء واجهة مستخدم سهلة الاستخدام للطلاب والإداريين</li>
-                            <li>تحسين جدولة الرحلات وتوزيع الموارد</li>
-                            <li>تقليل أوقات الانتظار وتحسين تجربة التنقل للطلاب</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <article class="card" data-anim style="transition-delay:.15s">
+        <div class="card-head">
+          <h3 class="title">متدرب ضمان جودة — <span class="text-cyan-300">العمل لمكافحة الجوع</span></h3>
+          <span class="meta">12/2024 — 02/2025</span>
         </div>
-    </section>
+        <ul class="bullets">
+          <li>تحليل بيانات وتحسين عمليات</li>
+          <li>لوحات معلومات داعمة للقرار</li>
+        </ul>
+      </article>
 
-    <!-- الورش التدريبية -->
-    <section id="workshops" class="section workshops">
-        <div class="container">
-            <h2 class="section-title fade-in">الورش التدريبية</h2>
-            
-            <!-- الورشات التدريبية عبر الإنترنت -->
-            <h3 class="section-subtitle fade-in">الورشات التدريبية عبر الإنترنت (أونلاين)</h3>
-            <div class="workshop-list fade-in">
-                <ul>
-                    <li>أساسيات تصميم المواقع الإلكترونية</li>
-                    <li>أساسيات بايثون</li>
-                    <li>الميزة غير العادلة</li>
-                    <li>AI Agent</li>
-                    <li>بناء الهوية الرقمية على LinkedIn</li>
-                    <li>أساسيات تصميم الإعلان</li>
-                    <li>خوارزميات مواقع التواصل الاجتماعي</li>
-                    <li>تصميم العروض بلمسة ذكية</li>
-                    <li>كيف يتم اختراقك دون أن تشعر</li>
-                    <li>كيف تبرز في سوق العمل الرقمي</li>
-                    <li>تحقيق الدخل من الإنترنت</li>
-                    <li>استكشاف قوة الكتابة بالذكاء الاصطناعي</li>
-                    <li>فن صناعة الصور بالذكاء الاصطناعي</li>
-                    <li>الهشاشة النفسية في عصر التقنية</li>
-                    <li>صناعة المحتوى بالذكاء الاصطناعي</li>
-                    <li>التعريف بمبادرة رقيم</li>
-                    <li>رحلة في عالم التصميم باستخدام Canva</li>
-                </ul>
-            </div>
-            
-            <!-- الورشات التدريبية الوجاهية -->
-            <h3 class="section-subtitle fade-in">الورشات التدريبية الوجاهية (مكتب مؤسسة ولي العهد المفرق)</h3>
-            <div class="workshop-list fade-in">
-                <ul>
-                    <li>تدريب الطلاب والمعلمين على استخدام التكنولوجيا والموارد الرقمية</li>
-                    <li>ورش عمل لتعزيز المهارات الرقمية واستخدام برامج Microsoft Office</li>
-                    <li>تدريب على مهارات التسويق الرقمي والإعلام الاجتماعي</li>
-                    <li>ورش تدريبية حول الذكاء الاصطناعي وتطبيقاته في مجالات مختلفة</li>
-                    <li>تكامل علم البيانات مع التسويق الرقمي</li>
-                    <li>ماركيتنغ ستورم</li>
-                    <li>الهوية الرقمية</li>
-                    <li>دورة تصميم المواقع الإلكترونية باستخدام الذكاء الاصطناعي</li>
-                    <li>ورشة تطبيقات الذكاء الاصطناعي</li>
-                </ul>
-            </div>
-            
-            <!-- الورشات التدريبية في المدارس -->
-            <h3 class="section-subtitle fade-in">الورشات التدريبية في المدارس (أكثر من 6 مدارس)</h3>
-            <div class="workshop-list fade-in">
-                <ul>
-                    <li>ورشة أساسيات الذكاء الاصطناعي</li>
-                    <li>ورشة الهشاشة النفسية في عصر التقنية</li>
-                    <li>ورشة الهوية الرقمية</li>
-                    <li>ورشة تطبيقات الذكاء الاصطناعي</li>
-                </ul>
-            </div>
-            
-            <!-- الورشات التدريبية في الجامعات -->
-            <h3 class="section-subtitle fade-in">الورشات التدريبية في الجامعات</h3>
-            <div class="workshop-list fade-in">
-                <ul>
-                    <li>ورشة أساسيات المونتاج باستخدام VN - جامعة آل البيت</li>
-                    <li>ورشة الهوية الرقمية - جامعة آل البيت</li>
-                    <li>ورشة اكتشاف عالم الذكاء الاصطناعي - جامعة اليرموك</li>
-                    <li>ورشة الهشاشة النفسية في عصر التقنية - جامعة اليرموك</li>
-                    <li>ورشة الهشاشة النفسية في عصر التقنية - الجامعة الأمريكية في مادبا</li>
-                </ul>
-            </div>
+      <article class="card" data-anim style="transition-delay:.2s">
+        <div class="card-head">
+          <h3 class="title">مسؤول تواصل مجتمعي — <span class="text-cyan-300">مؤسسة ولي العهد</span></h3>
+          <span class="meta">09/2024 — 12/2024</span>
         </div>
-    </section>
+        <ul class="bullets">
+          <li>تنسيق الأنشطة وبناء الشراكات</li>
+          <li>تقارير وملخصات تحليلية</li>
+        </ul>
+      </article>
 
-    <!-- المهارات -->
-    <section id="skills" class="section skills">
-        <div class="container">
-            <h2 class="section-title fade-in">المهارات</h2>
-            <div class="skills-container">
-                <div class="skill-category fade-in">
-                    <h3>التدريب والتعليم</h3>
-                    <ul class="skill-list">
-                        <li>تصميم المناهج التدريبية</li>
-                        <li>إدارة ورش العمل التفاعلية</li>
-                        <li>التدريس الإلكتروني</li>
-                        <li>تطوير المواد التعليمية المخصصة</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>تكنولوجيا المعلومات</h3>
-                    <ul class="skill-list">
-                        <li>لغات البرمجة (HTML, CSS, JavaScript, Python)</li>
-                        <li>إدارة قواعد البيانات</li>
-                        <li>تطبيقات الذكاء الاصطناعي</li>
-                        <li>حل مشكلات الشبكات والأنظمة</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>الإعلام والتسويق الرقمي</h3>
-                    <ul class="skill-list">
-                        <li>إدارة منصات التواصل الاجتماعي</li>
-                        <li>إنتاج المحتوى الرقمي</li>
-                        <li>تحليلات وسائل التواصل الاجتماعي</li>
-                        <li>إنتاج الفيديو والمونتاج</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>إدارة البيانات</h3>
-                    <ul class="skill-list">
-                        <li>تحليل البيانات باستخدام Excel</li>
-                        <li>إعداد التقارير الإحصائية</li>
-                        <li>تصور البيانات</li>
-                        <li>تصميم الاستبيانات وتحليل النتائج</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>الصحة النفسية</h3>
-                    <ul class="skill-list">
-                        <li>تقديم ورش توعوية في الصحة النفسية</li>
-                        <li>تقنيات الدعم النفسي</li>
-                        <li>إدارة الضغط والتوتر</li>
-                        <li>التوعية بالصحة النفسية للمجتمعات المختلفة</li>
-                    </ul>
-                </div>
-            </div>
+      <article class="card" data-anim style="transition-delay:.25s">
+        <div class="card-head">
+          <h3 class="title">معلم حاسوب — <span class="text-cyan-300">مدرسة التمام الخاصة</span></h3>
+          <span class="meta">08/2022 — 08/2024</span>
         </div>
-    </section>
+        <ul class="bullets">
+          <li>تدريس تقنيات حديثة</li>
+          <li>أنشطة عملية لترسيخ المفاهيم</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-    <!-- التعليم -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">التعليم</h2>
-            <div class="education-card fade-in">
-                <div class="education-date">2017 – 2021</div>
-                <h3 class="education-title">بكالوريوس علوم الحاسوب – جامعة آل البيت</h3>
-                <ul class="education-details">
-                    <li>التخصص في تطوير البرمجيات وقواعد البيانات</li>
-                    <li>مشروع التخرج: تطبيق حوسبة باصات جامعة آل البيت</li>
-                </ul>
-            </div>
+  <!-- التدريبات (أسفل الخبرات مباشرة) -->
+  <section id="trainings" class="section container mx-auto px-3 sm:px-4 py-14">
+    <div class="flex items-center justify-between gap-3" data-anim>
+      <h2 class="text-2xl md:text-3xl font-extrabold">التدريبات</h2>
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-sm text-cyan-300 hover:text-white">
+        احجز تدريب <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+
+    <!-- Tabs -->
+    <div class="mt-5 flex flex-wrap gap-2 text-xs" data-anim style="transition-delay:.05s">
+      <button class="tab active" data-tab="online">أونلاين</button>
+      <button class="tab" data-tab="office">مكتب مؤسسة ولي العهد</button>
+      <button class="tab" data-tab="schools">المدارس</button>
+      <button class="tab" data-tab="universities">الجامعات</button>
+    </div>
+
+    <!-- Panels -->
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="tpanel" id="online" data-anim style="transition-delay:.1s">
+        <h3 class="heading">أونلاين</h3>
+        <ul class="list">
+          <li>أساسيات تصميم المواقع الإلكترونية</li>
+          <li>أساسيات بايثون</li>
+          <li>AI Agent — الميزة غير العادلة</li>
+          <li>بناء الهوية الرقمية على LinkedIn</li>
+          <li>أساسيات تصميم الإعلان</li>
+          <li>خوارزميات مواقع التواصل الاجتماعي</li>
+          <li>تصميم العروض بلمسة ذكية</li>
+          <li>كيف يتم اختراقك دون أن تشعر</li>
+          <li>كيف تبرز في سوق العمل الرقمي</li>
+          <li>تحقيق الدخل من الإنترنت</li>
+          <li>استكشاف قوة الكتابة بالذكاء الاصطناعي</li>
+          <li>فن صناعة الصور بالذكاء الاصطناعي</li>
+          <li>صناعة المحتوى بالذكاء الاصطناعي</li>
+          <li>التعريف بمبادرة رقيم</li>
+          <li>رحلة في عالم التصميم باستخدام Canva</li>
+        </ul>
+      </div>
+
+      <div class="tpanel hidden" id="office" data-anim style="transition-delay:.15s">
+        <h3 class="heading">مكتب مؤسسة ولي العهد — المفرق</h3>
+        <ul class="list">
+          <li>تدريب الطلاب والمعلمين على استخدام التكنولوجيا</li>
+          <li>ورش Microsoft Office</li>
+          <li>مهارات التسويق الرقمي والإعلام الاجتماعي</li>
+          <li>تطبيقات الذكاء الاصطناعي</li>
+          <li>تكامل علم البيانات مع التسويق الرقمي</li>
+          <li>ماركيتنغ ستورم</li>
+          <li>الهوية الرقمية</li>
+          <li>تصميم المواقع بالذكاء الاصطناعي</li>
+          <li>ورشة تطبيقات الذكاء الاصطناعي</li>
+        </ul>
+      </div>
+
+      <div class="tpanel hidden" id="schools" data-anim style="transition-delay:.2s">
+        <h3 class="heading">في المدارس</h3>
+        <ul class="list">
+          <li>أساسيات الذكاء الاصطناعي</li>
+          <li>الهشاشة النفسية في عصر التقنية</li>
+          <li>الهوية الرقمية</li>
+          <li>تطبيقات الذكاء الاصطناعي</li>
+        </ul>
+      </div>
+
+      <div class="tpanel hidden" id="universities" data-anim style="transition-delay:.25s">
+        <h3 class="heading">في الجامعات</h3>
+        <ul class="list">
+          <li>أساسيات المونتاج باستخدام VN — جامعة آل البيت</li>
+          <li>الهوية الرقمية — جامعة آل البيت</li>
+          <li>اكتشاف عالم الذكاء الاصطناعي — جامعة اليرموك</li>
+          <li>الهشاشة النفسية — جامعة اليرموك</li>
+          <li>الهشاشة النفسية — الجامعة الأمريكية في مادبا</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2" data-anim style="transition-delay:.3s">
+      <a target="_blank" class="btn" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%20%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%20%D8%A3%D9%88%D9%86%D9%84%D8%A7%D9%8A%D9%86">احجز تدريب أونلاين</a>
+      <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%A8%D8%B1%D8%A7%D9%85%D8%AC%20%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8">استفسر</a>
+    </div>
+  </section>
+
+  <!-- المشاريع -->
+  <section id="projects" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>المشاريع</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-4">
+      <div class="card" data-anim style="transition-delay:.05s">
+        <h3 class="font-extrabold text-cyan-300">مبادرة رقيم</h3>
+        <p class="mt-2 text-slate-300">ورش رقمية مجانية للمجتمعات المهمشة: مهارات أساسية ومتقدمة، ذكاء اصطناعي، أمن سيبراني.</p>
+      </div>
+      <div class="card" data-anim style="transition-delay:.1s">
+        <h3 class="font-extrabold text-cyan-300">حوسبة باصات جامعة آل البيت</h3>
+        <p class="mt-2 text-slate-300">نظام لإدارة وتتبع الباصات لتحسين الكفاءة وتجربة الطلاب (مشروع تخرج).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- المهارات + التعليم + التطوع + اللغات -->
+  <section id="skills" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>المهارات</h2>
+    <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="card" data-anim style="transition-delay:.05s">
+        <h3 class="font-semibold text-cyan-300">التدريب والتعليم</h3>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+          <span class="pill">تصميم المناهج</span><span class="pill">ورش تفاعلية</span><span class="pill">التدريس الإلكتروني</span><span class="pill">مواد تعليمية</span>
         </div>
-    </section>
-
-    <!-- العمل التطوعي -->
-    <section id="volunteer" class="section volunteer">
-        <div class="container">
-            <h2 class="section-title fade-in">العمل التطوعي</h2>
-            <div class="volunteer-card fade-in">
-                <div class="volunteer-date">منذ 12/2022</div>
-                <h3 class="volunteer-title">متطوع – مؤسسة ولي العهد</h3>
-                <ul class="volunteer-details">
-                    <li>المشاركة في مبادرات التمكين الرقمي للشباب</li>
-                    <li>تنظيم فعاليات مجتمعية لنشر الوعي التكنولوجي</li>
-                    <li>تقديم استشارات تقنية للمشاريع الشبابية</li>
-                    <li>قيادة الافرقة التطوعية الشبابية</li>
-                </ul>
-            </div>
+      </div>
+      <div class="card" data-anim style="transition-delay:.1s">
+        <h3 class="font-semibold text-cyan-300">التقنية</h3>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+          <span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Python</span><span class="pill">قواعد بيانات</span>
         </div>
-    </section>
-
-    <!-- اللغات -->
-    <section id="languages" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">اللغات</h2>
-            <div class="languages-container">
-                <div class="language-card fade-in">
-                    <h3 class="language-name">العربية</h3>
-                    <p class="language-level">اللغة الأم</p>
-                </div>
-                <div class="language-card fade-in">
-                    <h3 class="language-name">الإنجليزية</h3>
-                    <p class="language-level">متقدمة</p>
-                </div>
-            </div>
+      </div>
+      <div class="card" data-anim style="transition-delay:.15s">
+        <h3 class="font-semibold text-cyan-300">الإنتاج الرقمي</h3>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs">
+          <span class="pill">إدارة السوشيال</span><span class="pill">إنتاج المحتوى</span><span class="pill">مونتاج</span><span class="pill">تصميم إعلانات</span>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- اتصل بي -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title fade-in">اتصل بي</h2>
-            <div class="contact-container">
-                <div class="contact-item fade-in">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-info">
-                        <div class="contact-label">رقم الهاتف</div>
-                        <div class="contact-value">+962791087449</div>
-                    </div>
-                </div>
-                <div class="contact-item fade-in">
-                    <div class="contact-icon">✉️</div>
-                    <div class="contact-info">
-                        <div class="contact-label">البريد الإلكتروني</div>
-                        <div class="contact-value">baderahusban@gmail.com</div>
-                    </div>
-                </div>
-                <div class="contact-item fade-in">
-                    <div class="contact-icon">🔗</div>
-                    <div class="contact-info">
-                        <div class="contact-label">LinkedIn</div>
-                        <div class="contact-value">
-                            <a href="https://www.linkedin.com/in/baderhusban/" target="_blank">linkedin.com/in/baderhusban</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="mt-6 grid md:grid-cols-3 gap-4">
+      <div class="card" data-anim style="transition-delay:.2s">
+        <h3 class="font-semibold text-cyan-300">التعليم</h3>
+        <p class="mt-1 text-sm text-slate-400">2017 — 2021</p>
+        <p class="mt-1 text-slate-200">بكالوريوس علوم الحاسوب — جامعة آل البيت</p>
+      </div>
+      <div class="card" data-anim style="transition-delay:.25s">
+        <h3 class="font-semibold text-cyan-300">العمل التطوعي</h3>
+        <p class="mt-1 text-sm text-slate-400">12/2022 — الآن</p>
+        <p class="mt-1 text-slate-200">متطوع — مؤسسة ولي العهد</p>
+      </div>
+      <div class="card" data-anim style="transition-delay:.3s">
+        <h3 class="font-semibold text-cyan-300">اللغات</h3>
+        <ul class="mt-2 text-slate-200 space-y-1">
+          <li><span class="font-medium">العربية:</span> الأم</li>
+          <li><span class="font-medium">الإنجليزية:</span> متقدمة</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- أعمال (فيديو) -->
+  <section id="works" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>أعمال مختارة</h2>
+    <p class="mt-2 text-slate-300" data-anim style="transition-delay:.05s">مقاطع قصيرة تعكس مجالات التدريب والإنتاج المرئي.</p>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 aspect-video" data-anim style="transition-delay:.1s">
+        <iframe title="نماذج من الدروس العملية" src="https://www.youtube.com/embed/dQw4w9WgXcQ" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-sm flex items-center gap-2">
+          <i data-lucide="play" class="w-4 h-4"></i> نماذج من الدروس العملية
         </div>
-    </section>
-
-    <!-- التذييل -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2025 بدر الحسبان. جميع الحقوق محفوظة.</p>
+      </div>
+      <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 aspect-video" data-anim style="transition-delay:.15s">
+        <iframe title="تجربة أدوات الذكاء الاصطناعي" src="https://www.youtube.com/embed/dQw4w9WgXcQ" class="w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 text-sm flex items-center gap-2">
+          <i data-lucide="play" class="w-4 h-4"></i> تجربة أدوات الذكاء الاصطناعي
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script>
-        // قائمة الجوال
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+  <!-- معرض صور مع Lightbox -->
+  <section id="gallery" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>معرض الصور</h2>
+    <p class="mt-2 text-slate-300" data-anim style="transition-delay:.05s">لقطات من ورش العمل والمبادرات والمشاريع.</p>
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-3">
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(0)" data-anim style="transition-delay:.1s"><img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200" alt="تدريب رقمي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"><div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition"></div></button>
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(1)" data-anim style="transition-delay:.15s"><img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200" alt="ورشة توعوية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></button>
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(2)" data-anim style="transition-delay:.2s"><img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200" alt="جلسة تصوير" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></button>
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(3)" data-anim style="transition-delay:.25s"><img src="https://images.unsplash.com/photo-1515169067865-5387ec356754?q=80&w=1200" alt="بودكاست زاوية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></button>
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(4)" data-anim style="transition-delay:.3s"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200" alt="جلسة تدريبية" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></button>
+      <button class="group relative overflow-hidden rounded-2xl border border-white/10 h-40 md:h-48" onclick="openLightbox(5)" data-anim style="transition-delay:.35s"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200" alt="إلقاء كلمة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"></button>
+    </div>
+  </section>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+  <!-- مودال Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center">
+    <div class="absolute inset-0 bg-black/70" onclick="closeLightbox()"></div>
+    <div class="relative max-w-5xl w-[92%] md:w-[80%]">
+      <img id="lightboxImg" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-2xl border border-white/10" />
+      <button onclick="closeLightbox()" class="absolute -top-3 -left-3 p-2 rounded-full bg-slate-900 border border-white/10">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+  </div>
 
-        // إغلاق القائمة عند النقر على الروابط
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+  <!-- تواصل -->
+  <section id="contact" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>تواصل معي</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="card" data-anim style="transition-delay:.05s">
+        <div class="flex items-center gap-3 text-slate-200"><i data-lucide="phone" class="w-5 h-5"></i><a href="tel:+962791087449" class="hover:underline">+962791087449</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="mail" class="w-5 h-5"></i><a href="mailto:baderahusban@gmail.com" class="hover:underline">baderahusban@gmail.com</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="linkedin" class="w-5 h-5"></i><a href="https://www.linkedin.com/in/baderhusban/" target="_blank" class="hover:underline">LinkedIn</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="instagram" class="w-5 h-5"></i><a href="https://www.instagram.com/baderhusban?igsh=emt5M2F4N296cmdp&utm_source=qr" target="_blank" class="hover:underline">Instagram</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="facebook" class="w-5 h-5"></i><a href="https://www.facebook.com/share/19bZLRYrw5/?mibextid=LQQJ4d" target="_blank" class="hover:underline">Facebook</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="message-circle" class="w-5 h-5"></i><a href="https://wa.me/962791087449?text=%D9%85%D9%88%D8%A7%D9%81%D9%82%20%D8%B9%D9%84%D9%89%20%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%88%D8%A7%D8%AA%D8%B3%D8%A7%D8%A8" target="_blank" class="hover:underline">WhatsApp</a></div>
+        <div class="mt-3 flex items-center gap-3 text-slate-200"><i data-lucide="external-link" class="w-5 h-5"></i><a href="https://baderhusban.github.io/Badercv/" target="_blank" class="hover:underline">السيرة الذاتية</a></div>
+      </div>
 
-        // تأثير التمرير لشريط التنقل
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+      <form class="card grid gap-3" onsubmit="sendMail(event)" data-anim style="transition-delay:.1s">
+        <div class="grid gap-1">
+          <label class="text-sm text-slate-300">الاسم</label>
+          <input id="name" required class="rounded-xl bg-slate-900/70 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-500" />
+        </div>
+        <div class="grid gap-1">
+          <label class="text-sm text-slate-300">البريد الإلكتروني</label>
+          <input type="email" id="email" required class="rounded-xl bg-slate-900/70 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-500" />
+        </div>
+        <div class="grid gap-1">
+          <label class="text-sm text-slate-300">الرسالة</label>
+          <textarea id="message" rows="4" required class="rounded-xl bg-slate-900/70 border border-white/10 px-3 py-2 outline-none focus:ring-2 focus:ring-cyan-500"></textarea>
+        </div>
+        <button class="mt-2 btn inline-flex items-center gap-1">
+          إرسال <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </button>
+      </form>
+    </div>
+  </section>
 
-        // تأثيرات الظهور عند التمرير
-        const fadeElements = document.querySelectorAll('.fade-in');
+  <!-- الخدمات (في نهاية الموقع) -->
+  <section id="services" class="section container mx-auto px-3 sm:px-4 py-14">
+    <h2 class="text-2xl md:text-3xl font-extrabold" data-anim>الخدمات</h2>
+    <p class="mt-2 text-slate-300" data-anim style="transition-delay:.05s">اختر الخدمة واضغط للحجز — سيتم فتح واتساب بعنوان الخدمة تلقائيًا.</p>
+    <div class="mt-6 grid xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="svc" data-anim style="transition-delay:.05s">
+        <div class="svc-head">
+          <h3>بناء موقع إلكتروني</h3><i data-lucide="layout" class="w-6 h-6 text-cyan-300"></i>
+        </div>
+        <p class="svc-desc">تصميم وتطوير مواقع متجاوبة وسريعة مع ربط النماذج والبريد.</p>
+        <ul class="svc-list"><li>تصميم حديث</li><li>سرعة عالية</li><li>تجاوب كامل</li></ul>
+        <div class="svc-actions">
+          <a target="_blank" class="btn inline-flex items-center gap-1" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%A8%D9%86%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A">احجز <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%A8%D9%86%D8%A7%D8%A1%20%D9%85%D9%88%D9%82%D8%B9">استفسر</a>
+        </div>
+      </div>
 
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        };
+      <div class="svc" data-anim style="transition-delay:.1s">
+        <div class="svc-head">
+          <h3>دورات تدريبية</h3><i data-lucide="monitor-smartphone" class="w-6 h-6 text-cyan-300"></i>
+        </div>
+        <p class="svc-desc">برامج تدريب مهارات رقمية (ويب، ذكاء اصطناعي، إنتاج محتوى).</p>
+        <ul class="svc-list"><li>مناهج عملية</li><li>شهادات حضور</li><li>تمارين تطبيقية</li></ul>
+        <div class="svc-actions">
+          <a target="_blank" class="btn inline-flex items-center gap-1" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AF%D9%88%D8%B1%D8%A7%D8%AA%20%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8%D9%8A%D8%A9">احجز <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A7%D8%AA">استفسر</a>
+        </div>
+      </div>
 
-        // تنفيذ التأثير عند التحميل وعند التمرير
-        window.addEventListener('load', fadeInOnScroll);
-        window.addEventListener('scroll', fadeInOnScroll);
+      <div class="svc" data-anim style="transition-delay:.15s">
+        <div class="svc-head">
+          <h3>تصميم إعلانات</h3><i data-lucide="megaphone" class="w-6 h-6 text-cyan-300"></i>
+        </div>
+        <p class="svc-desc">تصاميم احترافية لحملات السوشيال والهوية المصغّرة.</p>
+        <ul class="svc-list"><li>قوالب متعددة</li><li>تسليم سريع</li><li>مقاسات جاهزة</li></ul>
+        <div class="svc-actions">
+          <a target="_blank" class="btn inline-flex items-center gap-1" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D8%A7%D8%AA">احجز <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86">استفسر</a>
+        </div>
+      </div>
 
-        // التمرير السلس للروابط
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+      <div class="svc" data-anim style="transition-delay:.2s">
+        <div class="svc-head">
+          <h3>استشارات ذكاء اصطناعي</h3><i data-lucide="bot" class="w-6 h-6 text-cyan-300"></i>
+        </div>
+        <p class="svc-desc">حلول عملية للوكلاء الذكية والأتمتة.</p>
+        <ul class="svc-list"><li>تشخيص الاحتياج</li><li>خطة تنفيذ</li><li>تجارب مصغّرة</li></ul>
+        <div class="svc-actions">
+          <a target="_blank" class="btn inline-flex items-center gap-1" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%B0%D9%83%D8%A7%D8%A1%20%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A">احجز <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A6%D9%8A%D8%A9">استفسر</a>
+        </div>
+      </div>
+
+      <div class="svc" data-anim style="transition-delay:.25s">
+        <div class="svc-head">
+          <h3>تصوير ومونتاج</h3><i data-lucide="camera" class="w-6 h-6 text-cyan-300"></i>
+        </div>
+        <p class="svc-desc">إنتاج فيديوهات تعليمية ودعائية قصيرة.</p>
+        <ul class="svc-list"><li>سيناريو مختصر</li><li>جرافيكس مبسّط</li><li>توافق منصات</li></ul>
+        <div class="svc-actions">
+          <a target="_blank" class="btn inline-flex items-center gap-1" href="https://wa.me/962791087449?text=%D8%AD%D8%AC%D8%B2%3A%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D9%88%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC">احجز <i data-lucide="arrow-up-right" class="w-4 h-4"></i></a>
+          <a target="_blank" class="btn-outline" href="https://wa.me/962791087449?text=%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%AD%D9%88%D9%84%20%D8%AE%D8%AF%D9%85%D8%A9%20%D8%AA%D8%B5%D9%88%D9%8A%D8%B1%20%D9%88%D9%85%D9%88%D9%86%D8%AA%D8%A7%D8%AC">استفسر</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="border-t border-white/10 py-8">
+    <div class="container mx-auto px-3 sm:px-4 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
+      <p class="text-slate-400">© <span id="year"></span> بدر الحسبان. جميع الحقوق محفوظة.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://www.linkedin.com/in/baderhusban/" target="_blank" class="inline-flex items-center gap-1 text-slate-300 hover:text-white" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        <a href="https://www.instagram.com/baderhusban?igsh=emt5M2F4N296cmdp&utm_source=qr" target="_blank" class="inline-flex items-center gap-1 text-slate-300 hover:text-white" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+        <a href="https://www.facebook.com/share/19bZLRYrw5/?mibextid=LQQJ4d" target="_blank" class="inline-flex items-center gap-1 text-slate-300 hover:text-white" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+        <a href="https://baderhusban.github.io/Badercv/" target="_blank" class="inline-flex items-center gap-1 text-slate-300 hover:text-white">
+          <i data-lucide="external-link" class="w-4 h-4"></i> السيرة الذاتية
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Icons
+    lucide.createIcons();
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    const drawer = mobileMenu.querySelector('.drawer');
+    const openBtn = document.getElementById('openMenu');
+    openBtn.addEventListener('click', () => toggleMenu(true));
+    function toggleMenu(show) {
+      mobileMenu.classList.toggle('hidden', !show);
+      setTimeout(()=> drawer.classList.toggle('open', show), 0);
+    }
+
+    // Intersection Observer for in-view animations
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('[data-anim]').forEach(el => io.observe(el));
+
+    // Lightbox
+    const images = [
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200",
+      "https://images.unsplash.com/photo-1529101091764-c3526daf38fe?q=80&w=1200",
+      "https://images.unsplash.com/photo-1515169067865-5387ec356754?q=80&w=1200",
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200",
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200",
+    ];
+    function openLightbox(i) {
+      document.getElementById('lightboxImg').src = images[i];
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('hidden'); lb.classList.add('flex');
+      lucide.createIcons();
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden'); lb.classList.remove('flex');
+    }
+
+    // Trainings tabs
+    const tabs = document.querySelectorAll('#trainings .tab');
+    const panels = {
+      online: document.getElementById('online'),
+      office: document.getElementById('office'),
+      schools: document.getElementById('schools'),
+      universities: document.getElementById('universities'),
+    };
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        Object.values(panels).forEach(p => p.classList.add('hidden'));
+        panels[btn.dataset.tab].classList.remove('hidden');
+      });
+    });
+
+    // Contact form -> mailto
+    function sendMail(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const mailto = `mailto:baderahusban@gmail.com?subject=${encodeURIComponent('رسالة من الموقع — ' + (name || ''))}&body=${encodeURIComponent('الاسم: ' + name + '\nالبريد: ' + email + '\n\nالرسالة:\n' + message)}`;
+      location.href = mailto;
+    }
+  </script>
 </body>
 </html>
